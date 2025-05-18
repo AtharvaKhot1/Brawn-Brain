@@ -1,0 +1,411 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    animation: gradientAnimation 10s ease infinite;
+    overflow: hidden;
+}
+
+/* Retro Grid Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 1px, transparent 1px, transparent 40px);
+    z-index: -1;
+}
+
+/* Neon Text */
+.neon-text {
+    font-family: 'Courier New', monospace;
+    font-size: 3rem;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.neon-subtext {
+    font-size: 1.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    animation: neonGlowSub 2s infinite alternate;
+}
+
+/* Buttons container */
+.buttons-container {
+    margin-top: 40px;
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background: #ff00ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #ff00ff;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* Button hover effect */
+button:hover {
+    background: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* Animations */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+    100% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff; }
+}
+
+@keyframes neonGlowSub {
+    0% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    100% { text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff; }
+}
+
+
+
+
+
+/* Retro style for Login page */
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Neon Glow Effect */
+.welcome-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.8);
+    animation: glow 2s infinite alternate;
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+input {
+    padding: 15px;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.8);
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 150, 0.8);
+    background-color: #444;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    background: #ff00ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #ff00ff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.8); }
+    100% { box-shadow: 0 0 30px rgba(0, 255, 150, 0.8); }
+}
+
+
+
+
+
+/* Retro style for Create Account page */
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Courier New', monospace;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Neon Glow Effect */
+.welcome-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.8);
+    animation: glow 2s infinite alternate;
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+input {
+    padding: 15px;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 0 10px rgba(255, 0, 150, 0.8);
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 255, 150, 0.8);
+    background-color: #444;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: white;
+    background: #ff00ff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #ff00ff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(255, 0, 150, 0.8); }
+    100% { box-shadow: 0 0 30px rgba(0, 255, 150, 0.8); }
+}
+
+
+
+
+/* Retro Style */
+body {
+    background: #0a0a1e;
+    font-family: 'Press Start 2P', cursive;
+    color: #00bfff; /* Light blue text */
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-image: radial-gradient(circle, #2e003e, #3b005b); /* Deep purple and pink gradient */
+}
+
+/* Welcome Text Container */
+.welcome-container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 40px;
+    border-radius: 10px;
+    border: 3px solid #8000ff; /* Neon purple border */
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.8); /* Purple glow */
+    width: 100%; /* Stretches to full width */
+    max-width: 800px; /* Maximum width limit */
+    min-height: 50vh; /* Moderate minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Welcome Message */
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #00bfff; /* Light blue text */
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff; /* Glowing blue */
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: pixelGlow 1.5s infinite alternate;
+}
+
+/* Level Buttons - Retro Pixel Effect */
+.level {
+    padding: 20px;
+    font-size: 1.8rem;
+    background: #8a00d4; /* Neon purple button background */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px;
+    box-shadow: 0 0 20px #8a00d4; /* Purple glow */
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    transition: 0.3s;
+}
+
+.level:hover {
+    background: #ff00ff; /* Pinkish purple hover */
+    box-shadow: 0 0 30px #ff00ff;
+}
+
+/* Level Container */
+.hierarchy-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Back Button */
+.buttons-container button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #00bfff; /* Light blue back button */
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px #00bfff; /* Blue glow */
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.buttons-container button:hover {
+    background: #8a00d4; /* Purple hover */
+    box-shadow: 0 0 25px #8a00d4;
+}
+
+/* Pixelated Text Animation */
+@keyframes pixelGlow {
+    0% { text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff; }
+    50% { text-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff, 0 0 35px #00bfff; }
+    100% { text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff; }
+}
+
+/* Audio Background Effect */
+audio {
+    display: none;
+}
+
+
+/*Transition from index to login*/
+
+/* Add a fade transition to the body */
+body {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* When the page loads, make the body visible */
+body.loaded {
+    opacity: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal-content {
+    background: black;
+    color: #00ffff;
+    padding: 30px;
+    border: 3px solid #ff00ff;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: 0 0 20px #ff00ff;
+  }
+  

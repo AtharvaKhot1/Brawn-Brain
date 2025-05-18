@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loader"></div>
+</div>
+
+<!-- Main Container -->
+<div class="main-container">
+  <div class="welcome-container">
+    <h1>⚔️🥷 Name 🥷⚔️</h1>
+    <form onsubmit="handleFormSubmit(event)">
+      <input type="text" placeholder="What do you liked to be called ?" required>
+      <p style="padding-bottom: 20px;padding-top: 5px;">Ready to take on the adventure, adventurer</p>
+      <!-- <input type="password" placeholder="Password" required> -->
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+
+  <!-- Back button -->
+  <div class="buttons-container">
+    <button onclick="window.location.href='index.html'">Back</button>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bg-music" autoplay loop>
+  <source src="assets/RetroMusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>

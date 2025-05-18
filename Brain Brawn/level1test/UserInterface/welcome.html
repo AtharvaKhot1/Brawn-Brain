@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="main-container">
+  <!-- Welcome Message -->
+  <div class="welcome-container">
+    <h1 id="welcome-message">Welcome, User!</h1>
+  </div>
+
+  <!-- Hierarchical Containers -->
+  <div class="hierarchy-container">
+    <!-- Navigating to a file outside the current directory -->
+    <button class="level level-1" onclick="navigateTo('../testlevel1.html')">Level 1</button>
+    <button class="level level-2" onclick="showComingSoon()">Level 2</button>
+    <button class="level level-3" onclick="showComingSoon()">Level 3</button>
+  </div>
+
+  <!-- Back Button -->
+  <div class="buttons-container">
+    <button onclick="navigateTologin('index.html')">Back</button>
+  </div>
+</div>
+
+<!-- Coming Soon Modal -->
+<div id="comingSoonModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h2>🚧 Under Construction 🚧</h2>
+    <p>We're still building this level. Check back soon!</p>
+    <button onclick="closeComingSoon()">OK</button>
+  </div>
+</div>
+
+<!-- Background Music -->
+<audio id="bg-music" autoplay loop>
+  <source src="assets/RetroMusic.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Popup Script -->
+<script>
+  function showComingSoon() {
+    document.getElementById('comingSoonModal').style.display = 'flex';
+  }
+
+  function closeComingSoon() {
+    document.getElementById('comingSoonModal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

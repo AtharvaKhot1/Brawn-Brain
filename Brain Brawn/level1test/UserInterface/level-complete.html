@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Level Complete</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      font-family: 'Courier New', monospace;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: gradientAnimation 10s ease infinite;
+      text-align: center;
+    }
+
+    .level-complete-box {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff00ff;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #ff00ff;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px #ff00ff;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #00ffcc;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #00ffff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .button-group button {
+      padding: 15px 25px;
+      background-color: #8a00d4;
+      color: white;
+      font-family: 'Press Start 2P', cursive;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #8a00d4;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff;
+      color: black;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: black;
+      padding: 30px;
+      border-radius: 10px;
+      border: 3px solid #ff00ff;
+      box-shadow: 0 0 20px #ff00ff;
+      text-align: center;
+      color: #00ffff;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .modal-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8a00d4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #8a00d4;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .modal-content button:hover {
+      background-color: #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+      color: black;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="level-complete-box">
+    <h1>🎉 ONTO THE NEXT LEVEL!</h1>
+    <h2>Great job defeating the enemy!</h2>
+    <p>It gets harder from here...</p>
+    <div class="button-group">
+      <button onclick="window.location.href='welcome.html'">Back to Menu</button>
+      <button onclick="showComingSoon()">Continue to Level 2</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="comingSoonModal" class="modal">
+    <div class="modal-content">
+      <h2>🚧 Level 2 Coming Soon! 🚧</h2>
+      <p>We’re cooking up more coding battles for you. Stay tuned!</p>
+      <button onclick="closeComingSoon()">OK</button>
+    </div>
+  </div>
+
+  <!-- Background Music (Keeps Playing) -->
+  <audio id="bg-music" autoplay loop>
+    <source src="../assets/RetroMusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function showComingSoon() {
+      document.getElementById("comingSoonModal").style.display = "flex";
+    }
+
+    function closeComingSoon() {
+      document.getElementById("comingSoonModal").style.display = "none";
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const music = document.getElementById('bg-music');
+      if (sessionStorage.getItem('musicTime')) {
+        music.currentTime = parseFloat(sessionStorage.getItem('musicTime'));
+      }
+      music.play();
+      window.addEventListener('beforeunload', () => {
+        sessionStorage.setItem('musicTime', music.currentTime);
+      });
+    });
+  </script>
+</body>
+</html>

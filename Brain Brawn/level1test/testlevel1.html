@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Page</title>
+  <link rel="stylesheet" href="testlevel1style.css" />
+</head>
+
+<body>
+  <!-- Start Screen Overlay -->
+  <div id="startScreen" class="overlay">
+    <div class="message-box">
+      <h2>GET READY TO FIGHT & LEARN</h2>
+      <p>Use arrow keys to move</p>
+      <p>Press SPACE to start the game</p>
+      
+    </div>
+  </div>
+
+  
+
+
+  <!-- Back to Welcome Button -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="backButton" onclick="window.location.href='UserInterface/welcome.html'" class="back-button">
+      Back to Welcome
+    </button>
+  </div>
+
+
+  <!-- Game Controls -->
+  <div id="gameControls" class="controls-container" style="display: none;">
+    <button id="attackButton">ATTACK</button>
+    <button id="blockButton">BLOCK</button>
+  </div>
+
+  <!-- Question Modal -->
+  <div id="questionModal" class="modal">
+    <div class="modal-content">
+      <h3>Answer Correctly To Continue</h3>
+      <p id="questionText"></p>
+      <div class="options-container">
+        <button class="option-button" id="optionA" data-option="A"></button>
+        <button class="option-button" id="optionB" data-option="B"></button>
+        <button class="option-button" id="optionC" data-option="C"></button>
+        <button class="option-button" id="optionD" data-option="D"></button>
+      </div>
+      <div id="feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <!-- Enemy Attack Modal -->
+  <div id="enemyAttackModal" class="modal">
+    <div class="modal-content">
+      <h3>The Killer Bunny slashes at you!</h3>
+      <div class="options-container">
+        <button id="blockYes">Block</button>
+        <button id="blockNo">Take the hit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- audio for level 1 -->
+
+  <audio id="bg-music" autoplay loop>
+    <source src="level1Music copy.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Scripts -->
+  <script src="level1JavaScript/characterFactory.js"></script>
+  <script src="level1JavaScript/testLevel.js"></script>
+  <script src="level1JavaScript/characterActions.js"></script>
+  <script src="level1JavaScript/enemyFactory.js"></script>
+  <script src="level1JavaScript/questionActions.js"></script>
+  <script src="level1JavaScript/gameLogic.js"></script>
+
+  <!-- Start Game on SPACE -->
+  <script>
+    const startScreen = document.getElementById('startScreen');
+    const gameControls = document.getElementById('gameControls');
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'Space' && startScreen.style.display !== 'none') {
+        startScreen.style.display = 'none';
+        gameControls.style.display = 'flex';
+        console.log("Game started!");
+      }
+    });
+  </script>
+</body>
+</html>
